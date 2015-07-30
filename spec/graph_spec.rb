@@ -5,6 +5,7 @@ describe Graph, "initialize" do
     before(:each) do
         @g = Graph.new 
     end
+
     context "building the graph" do
     	it "should create vertices" do
             @g.add_vertex('A', {'B' => 2})
@@ -57,7 +58,6 @@ describe Graph, "initialize" do
         end
     end
 
-
     context "shortest path" do
         it "should work for adjacent nodes" do
             @g.add_vertex('A', {'B' => [2,"1"], 'C' => [4,"1"]})
@@ -67,21 +67,21 @@ describe Graph, "initialize" do
             correct_path = ['A','B']
             expect(path).to eq correct_path
         end
-=begin
+
         it "should find correct route for more complex graph" do
-            @g.add_vertex('A', {'B' => 7, 'C' => 8})
-            @g.add_vertex('B', {'A' => 7, 'F' => 2})
-            @g.add_vertex('C', {'A' => 8, 'F' => 6, 'G' => 4})
-            @g.add_vertex('D', {'F' => 8})
-            @g.add_vertex('E', {'H' => 1})
-            @g.add_vertex('F', {'B' => 2, 'C' => 6, 'D' => 8, 'G' => 9, 'H' => 3})
-            @g.add_vertex('G', {'C' => 4, 'F' => 9})
-            @g.add_vertex('H', {'E' => 1, 'F' => 3})
+            @g.add_vertex('A', {'B' => [7,"1"], 'C' => [8,"1"]})
+            @g.add_vertex('B', {'A' => [7,"1"], 'F' => [2,"1"]})
+            @g.add_vertex('C', {'A' => [8,"1"], 'F' => [6,"1"], 'G' => [4,"1"]})
+            @g.add_vertex('D', {'F' => [8,"1"]})
+            @g.add_vertex('E', {'H' => [1,"1"]})
+            @g.add_vertex('F', {'B' => [2,"1"], 'C' => [6,"1"], 'D' => [8,"1"], 'G' => [9,"1"], 'H' => [3,"1"]})
+            @g.add_vertex('G', {'C' => [4,"1"], 'F' => [9,"1"]})
+            @g.add_vertex('H', {'E' => [1,"1"], 'F' => [3,"1"]})
 
             path = @g.shortest_path('A', 'H')
             correct_path = ['A','B','F','H']
             expect(path).to eq correct_path
         end
-=end
+
     end
 end

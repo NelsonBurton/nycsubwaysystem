@@ -1,4 +1,5 @@
 # graph implementation
+# based largely on http://www.maxburstein.com/blog/introduction-to-graph-theory-finding-shortest-path/
 # fibornacci heap priority queue implemntation
 # http://www.rubydoc.info/gems/PriorityQueue/0.1.2
 require 'priority_queue'

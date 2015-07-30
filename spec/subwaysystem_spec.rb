@@ -8,7 +8,6 @@ describe SubwaySystem, "build map/add train line" do
     end
 
     context "challenge 1 tests" do
-
         it "should create vertices" do
             houston = @subway_system.get_stop("Houston")
             node = {"Canal" => [1, "1"], "Christopher" => [1,"1"] }
@@ -79,7 +78,6 @@ describe SubwaySystem, "take trains" do
     end
 
     context "challenge 1 tests" do
-
         it "should work for no travel" do
             path = @subway_system.take_train(origin="Canal", destination="Canal")
             correct_path = ["Canal"]
@@ -131,7 +129,6 @@ describe SubwaySystem, "take trains" do
             path = @subway_system.take_train(origin="Canal", destination="West 4th")
             correct_path = [["Canal", "Houston", "Christopher", "14th", "West 4th"], 17]
             expect(path).to eq correct_path
-            
         end
     end 
 
