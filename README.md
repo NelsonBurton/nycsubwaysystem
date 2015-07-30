@@ -1,7 +1,7 @@
 Subway System
 ============
 
-Ruby project for mapping the NYC subway network and calculating transit times. 
+Ruby project for mapping the NYC subway network and calculating transit times. To calculate an optimum route, the take train method uses a Dijkstra shortest path algorithm using a min-priority queue implemented by a Fibonacci heap. 
 
 
 Requirements
@@ -12,7 +12,7 @@ Requirements
 
 Running the code
 -----------
-There are two directories, lib, and spec. Spec contains the RSpec tests, and lib has the actual ruby files. 
+There are two directories, lib, and spec. spec contains the RSpec tests, and lib has the actual ruby files. 
 
 To run the RSpec tests, navigate to the root directory and run:
 
@@ -24,9 +24,10 @@ Create a SubwaySystem object with
 
     s = SubwaySystem.new
 
+---
+
 There are two main methods:
 
----
     add_train_line (stops, name)
 
 Example input:
@@ -54,3 +55,5 @@ Alternatively, if you added a train line with time between stations, then
 
     s.take_train(origin="Houston", destination="23rd")
     # returns [["Houston", "Christopher", "14th", "23rd"], 11]
+
+
